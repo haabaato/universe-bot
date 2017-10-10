@@ -28,6 +28,11 @@ module.exports = (robot) ->
   robot.respond /dance/gim, (res) ->
     res.send " > Shake it, shake shake it!"
 
+  lulz = ['lol', 'rofl', 'lmao']
+
+  robot.respond /lulz/i, (res) ->
+    res.send res.random lulz
+
   robot.respond /deploy (\w*)/i, (res) ->
     target = res.match[1]
     if target is "production"
